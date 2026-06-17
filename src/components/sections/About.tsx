@@ -83,20 +83,20 @@ export default function About() {
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute left-5 top-5 flex items-center gap-2.5 rounded-2xl bg-white/95 px-3.5 py-2.5 shadow-card-premium backdrop-blur-md"
                 >
-                  <div className="relative h-11 w-11 shrink-0">
+                  <div className="relative h-12 w-[58px] shrink-0">
                     <Image
                       src="/images/logo-mark.png"
                       alt=""
                       fill
-                      sizes="44px"
+                      sizes="58px"
                       className="object-contain"
                     />
                   </div>
                   <div className="leading-tight">
-                    <p className="font-display text-sm font-extrabold tracking-tight text-royal-900">
+                    <p className="font-display text-base font-extrabold tracking-tight text-royal-900">
                       GAVIRNENI
                     </p>
-                    <p className="text-[9px] font-semibold uppercase tracking-[0.22em] text-gold-700">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700">
                       Private Limited
                     </p>
                   </div>

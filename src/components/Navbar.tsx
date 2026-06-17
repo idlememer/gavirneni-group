@@ -37,23 +37,24 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Gavirneni Private Limited — Home"
-          className="flex shrink-0 items-center gap-3 pl-1 pr-3"
+          className="flex shrink-0 items-center gap-3 pl-2 pr-3 sm:gap-3.5"
         >
-          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
+          {/* Container matches natural 1.15:1 aspect — no letterboxing */}
+          <div className="relative h-12 w-[60px] shrink-0 sm:h-16 sm:w-[78px]">
             <Image
               src="/images/logo-mark.png"
               alt=""
               fill
-              sizes="64px"
+              sizes="(min-width: 640px) 78px, 60px"
               className="object-contain"
               priority
             />
           </div>
           <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-[17px] font-extrabold tracking-tight text-royal-900">
+            <span className="font-display text-xl font-extrabold tracking-tight text-royal-900">
               GAVIRNENI
             </span>
-            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-700">
               Private Limited
             </span>
           </div>

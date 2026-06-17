@@ -73,22 +73,23 @@ export default function Footer() {
             <Link
               href="/"
               aria-label="Gavirneni Private Limited — Home"
-              className="flex items-center gap-3"
+              className="flex items-center gap-3.5"
             >
-              <div className="relative h-20 w-20 shrink-0">
+              {/* Container matches natural 1.15:1 aspect — no letterboxing */}
+              <div className="relative h-20 w-[92px] shrink-0">
                 <Image
                   src="/images/logo-mark.png"
                   alt=""
                   fill
-                  sizes="80px"
+                  sizes="92px"
                   className="object-contain"
                 />
               </div>
               <div className="leading-tight">
-                <p className="font-display text-2xl font-extrabold tracking-tight text-white">
+                <p className="font-display text-3xl font-extrabold tracking-tight text-white">
                   GAVIRNENI
                 </p>
-                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400">
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-gold-400">
                   Private Limited
                 </p>
               </div>
