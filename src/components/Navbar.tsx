@@ -39,13 +39,13 @@ export default function Navbar() {
           aria-label="Gavirneni Private Limited — Home"
           className="flex shrink-0 items-center gap-3 pl-2 pr-3 sm:gap-3.5"
         >
-          {/* Container matches natural 1.15:1 aspect — no letterboxing */}
-          <div className="relative h-12 w-[60px] shrink-0 sm:h-16 sm:w-[78px]">
+          {/* Official transparent G mark — near-square aspect */}
+          <div className="relative h-12 w-12 shrink-0 sm:h-16 sm:w-16">
             <Image
               src="/images/logo-mark.png"
               alt=""
               fill
-              sizes="(min-width: 640px) 78px, 60px"
+              sizes="(min-width: 640px) 64px, 48px"
               className="object-contain"
               priority
             />

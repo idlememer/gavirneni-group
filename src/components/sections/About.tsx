@@ -83,12 +83,12 @@ export default function About() {
                   transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
                   className="absolute left-5 top-5 flex items-center gap-2.5 rounded-2xl bg-white/95 px-3.5 py-2.5 shadow-card-premium backdrop-blur-md"
                 >
-                  <div className="relative h-12 w-[58px] shrink-0">
+                  <div className="relative h-12 w-12 shrink-0">
                     <Image
                       src="/images/logo-mark.png"
                       alt=""
                       fill
-                      sizes="58px"
+                      sizes="48px"
                       className="object-contain"
                     />
                   </div>
@@ -112,6 +112,9 @@ export default function About() {
                   </p>
                   <p className="mt-1.5 text-[11px] text-slate-200">
                     MBA – Global Business, London, UK
+                  </p>
+                  <p className="mt-1 text-[11px] text-gold-200">
+                    Ex-Prison Officer · HMP Bedford, UK
                   </p>
                 </div>
               </div>

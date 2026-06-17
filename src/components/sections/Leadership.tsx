@@ -13,9 +13,9 @@ const founders = [
     image: '/images/founder-karthikeya.jpg',
     bullets: [
       { Icon: Globe2, text: 'Background in International Business' },
-      { Icon: BrainCircuit, text: 'Professional experience in the United Kingdom' },
+      { Icon: BrainCircuit, text: 'Ex-Prison Officer · HMP Bedford, United Kingdom' },
     ],
-    bio: 'Brings global perspective and operational discipline to the organisation — shaping the group’s international strategy and cross-border partnerships.',
+    bio: 'Brings global perspective and rare operational discipline to the organisation — shaped by hands-on UK public-service experience as an HM Prison Service officer at HMP Bedford. That background of structured process, accountability and people-handling now drives Gavirneni Group’s international strategy and cross-border partnerships.',
   },
   {
     name: 'Rishitha Karuturi',

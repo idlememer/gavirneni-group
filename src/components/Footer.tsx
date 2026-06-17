@@ -75,13 +75,13 @@ export default function Footer() {
               aria-label="Gavirneni Private Limited — Home"
               className="flex items-center gap-3.5"
             >
-              {/* Container matches natural 1.15:1 aspect — no letterboxing */}
-              <div className="relative h-20 w-[92px] shrink-0">
+              {/* Official transparent G mark — near-square aspect */}
+              <div className="relative h-20 w-20 shrink-0">
                 <Image
                   src="/images/logo-mark.png"
                   alt=""
                   fill
-                  sizes="92px"
+                  sizes="80px"
                   className="object-contain"
                 />
               </div>
