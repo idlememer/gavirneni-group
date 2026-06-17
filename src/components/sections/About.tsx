@@ -108,10 +108,10 @@ export default function About() {
                     Founder &amp; Director
                   </p>
                   <p className="mt-1 font-display text-lg font-bold leading-tight text-white">
-                    Karthikeya Chowdary Gavirneni
+                    Gavirneni Karthikeya Chowdary
                   </p>
                   <p className="mt-1.5 text-[11px] text-slate-200">
-                    MBA, United Kingdom · International Business
+                    MBA – Global Business, London, UK
                   </p>
                 </div>
               </div>

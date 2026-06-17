@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 import About from '@/components/sections/About';
 import Leadership from '@/components/sections/Leadership';
+import CoreValues from '@/components/sections/CoreValues';
 import Certifications from '@/components/sections/Certifications';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
-import Testimonials from '@/components/sections/Testimonials';
 import Reveal from '@/components/motion/Reveal';
 import { Compass, Target, HeartHandshake } from 'lucide-react';
 
@@ -70,9 +70,9 @@ export default function AboutPage() {
 
       <About />
       <Leadership />
+      <CoreValues />
       <Certifications />
       <WhyChooseUs />
-      <Testimonials />
     </>
   );
 }

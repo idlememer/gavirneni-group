@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import { Facebook, Instagram, Youtube, Mail, Phone, MapPin, ArrowUpRight, ShieldCheck } from 'lucide-react';
 import { brand } from '@/lib/brand';
 
 const cols = [
@@ -41,14 +41,14 @@ export default function Footer() {
       <div className="absolute -top-40 left-1/2 -z-10 h-80 w-[80%] -translate-x-1/2 rounded-full bg-royal-500/20 blur-3xl" />
 
       <div className="container-page pt-20 pb-10">
-        {/* Top CTA strip */}
-        <div className="mb-14 grid items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-md md:grid-cols-[1.4fr,1fr]">
+        {/* Top CTA strip — partnership quote */}
+        <div className="mb-14 grid items-center gap-6 rounded-3xl border border-white/10 bg-white/5 p-7 backdrop-blur-md md:grid-cols-[1.6fr,1fr]">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-400">
-              Start something new with Gavirneni
+              {brand.serviceReach}
             </p>
-            <h3 className="mt-2 font-display text-2xl font-bold text-white md:text-3xl">
-              From government paperwork to global careers — we handle it all.
+            <h3 className="mt-2 font-display text-xl font-bold leading-snug text-white md:text-2xl">
+              {brand.partnershipQuote}
             </h3>
           </div>
           <div className="flex flex-wrap items-center justify-start gap-3 md:justify-end">
@@ -56,8 +56,13 @@ export default function Footer() {
               Get in touch
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-            <a href={`https://wa.me/${brand.whatsapp}`} className="btn-outline-light">
-              WhatsApp
+            <a
+              href={`https://wa.me/${brand.whatsapp}`}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-outline-light"
+            >
+              {brand.whatsappLabel}
             </a>
           </div>
         </div>
@@ -70,20 +75,20 @@ export default function Footer() {
               aria-label="Gavirneni Private Limited — Home"
               className="flex items-center gap-3"
             >
-              <div className="relative h-14 w-14 shrink-0">
+              <div className="relative h-20 w-20 shrink-0">
                 <Image
                   src="/images/logo-mark.png"
                   alt=""
                   fill
-                  sizes="56px"
+                  sizes="80px"
                   className="object-contain"
                 />
               </div>
               <div className="leading-tight">
-                <p className="font-display text-lg font-extrabold tracking-tight text-white">
+                <p className="font-display text-2xl font-extrabold tracking-tight text-white">
                   GAVIRNENI
                 </p>
-                <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-gold-400">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400">
                   Private Limited
                 </p>
               </div>
@@ -173,6 +178,20 @@ export default function Footer() {
                   </span>
                   <span className="text-xs font-semibold">{brand.socials.youtubeHandle}</span>
                 </a>
+                <a
+                  href={brand.socials.x}
+                  aria-label="X (Twitter)"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group inline-flex w-fit items-center gap-2.5 rounded-full border border-white/10 bg-white/5 py-1.5 pl-2 pr-3.5 text-slate-300 transition-colors duration-200 hover:border-gold-400 hover:bg-gold-400/10 hover:text-gold-300"
+                >
+                  <span className="grid h-7 w-7 place-items-center rounded-full bg-black text-white">
+                    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 fill-white">
+                      <path d="M18.244 2H21l-6.51 7.43L22 22h-6.828l-4.78-6.146L4.96 22H2.2l6.99-7.96L2 2h7.005l4.33 5.69L18.244 2zm-2.39 18.343h1.886L7.252 3.55H5.243L15.854 20.343z" />
+                    </svg>
+                  </span>
+                  <span className="text-xs font-semibold">{brand.socials.xHandle}</span>
+                </a>
               </div>
             </div>
           </div>
@@ -196,16 +215,21 @@ export default function Footer() {
           ))}
         </div>
 
+        {/* Compliance strip */}
+        <div className="mt-12 grid gap-3 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md sm:grid-cols-2 lg:grid-cols-4">
+          <ComplianceItem label="CIN" value={brand.cin} />
+          <ComplianceItem label="PAN" value={brand.pan} />
+          <ComplianceItem label="GSTIN" value={brand.gstin} />
+          <ComplianceItem label="UDYAM" value={brand.udyam} />
+        </div>
+
         {/* Legal */}
-        <div className="mt-14 border-t border-white/10 pt-6">
+        <div className="mt-8 border-t border-white/10 pt-6">
           <div className="flex flex-col items-start justify-between gap-3 text-xs text-slate-400 md:flex-row md:items-center">
             <p>
               © {new Date().getFullYear()} {brand.legalName}. All rights reserved.
             </p>
-            <p>
-              CIN: <span className="text-slate-200">{brand.cin}</span> · Registered under the
-              Companies Act, 2013.
-            </p>
+            <p>Registered under the Companies Act, 2013 · Andhra Pradesh.</p>
             <div className="flex gap-4">
               <Link href="/about" className="link-quiet">Privacy</Link>
               <Link href="/about" className="link-quiet">Terms</Link>
@@ -215,5 +239,21 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function ComplianceItem({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center gap-2.5">
+      <span className="grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gold-400/10 text-gold-300 ring-1 ring-gold-400/30">
+        <ShieldCheck className="h-3.5 w-3.5" />
+      </span>
+      <div className="min-w-0">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-400">
+          {label}
+        </p>
+        <p className="truncate text-xs font-semibold text-white">{value}</p>
+      </div>
+    </div>
   );
 }

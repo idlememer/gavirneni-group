@@ -1,27 +1,23 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, MessageCircle, ArrowRight, Facebook, Instagram, Youtube } from 'lucide-react';
+import {
+  Phone,
+  Mail,
+  MapPin,
+  MessageCircle,
+  ArrowRight,
+  Facebook,
+  Instagram,
+  Youtube,
+  Globe2,
+  Home,
+} from 'lucide-react';
 import { useState } from 'react';
 import Reveal from '@/components/motion/Reveal';
 import { brand } from '@/lib/brand';
 
 export default function ContactSection() {
-  const [submitted, setSubmitted] = useState(false);
-
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = data.get('name');
-    const message = data.get('message');
-    const subject = encodeURIComponent(`Enquiry from ${name}`);
-    const body = encodeURIComponent(`${message}\n\n— ${name}`);
-    window.location.href = `mailto:${brand.email}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-    form.reset();
-  };
-
   return (
     <section id="contact" className="section relative isolate overflow-hidden bg-slate-50">
       <div className="container-page">
@@ -31,14 +27,24 @@ export default function ContactSection() {
             Let&apos;s start something <span className="gradient-text">together.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
-            Reach our team by phone, email or WhatsApp — or drop us a quick note below.
+            {brand.taglinePromise}
           </p>
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-emerald-700 ring-1 ring-emerald-200">
+              <Globe2 className="h-3 w-3" />
+              {brand.serviceReach}
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-royal-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-royal-700 ring-1 ring-royal-100">
+              <Home className="h-3 w-3" />
+              Online services available · no need to visit office
+            </span>
+          </div>
         </Reveal>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1fr,1.1fr]">
           {/* Info card */}
           <Reveal>
-            <div className="h-full overflow-hidden rounded-3xl bg-royal-gradient p-7 text-white shadow-card-premium-hover">
+            <div className="relative h-full overflow-hidden rounded-3xl bg-royal-gradient p-7 text-white shadow-card-premium-hover">
               <div className="absolute inset-0 -z-10 bg-grid-pattern bg-grid-sm opacity-20" />
               <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold-300">
                 Reach us directly
@@ -168,74 +174,30 @@ export default function ContactSection() {
                       {brand.socials.youtubeHandle}
                     </span>
                   </a>
+                  <a
+                    href={brand.socials.x}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex w-fit items-center gap-2 rounded-full bg-white/10 py-1.5 pl-2 pr-3.5 transition-colors hover:bg-white/20"
+                  >
+                    <span className="grid h-6 w-6 place-items-center rounded-full bg-black">
+                      <svg viewBox="0 0 24 24" className="h-3 w-3 fill-white">
+                        <path d="M18.244 2H21l-6.51 7.43L22 22h-6.828l-4.78-6.146L4.96 22H2.2l6.99-7.96L2 2h7.005l4.33 5.69L18.244 2zm-2.39 18.343h1.886L7.252 3.55H5.243L15.854 20.343z" />
+                      </svg>
+                    </span>
+                    <span className="text-xs font-semibold text-white">
+                      {brand.socials.xHandle}
+                    </span>
+                  </a>
                 </div>
               </div>
             </div>
           </Reveal>
 
-          {/* Form + map */}
+          {/* WhatsApp-first CTA panel (replaces email form) */}
           <Reveal delay={0.1}>
             <div className="grid gap-5">
-              <form
-                onSubmit={onSubmit}
-                className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card-premium"
-              >
-                <p className="font-display text-lg font-bold text-slate-900">Send a message</p>
-                <p className="mt-1 text-sm text-slate-500">
-                  We&apos;ll route your enquiry to the right division within 24 hours.
-                </p>
-
-                <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  <Field label="Name" name="name" placeholder="Your full name" required />
-                  <Field label="Phone" name="phone" placeholder="+91…" />
-                  <div className="sm:col-span-2">
-                    <Field label="Email" name="email" placeholder="you@example.com" type="email" required />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-600">
-                      Interested in
-                    </label>
-                    <select
-                      name="topic"
-                      className="h-11 w-full cursor-pointer rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none transition-colors focus:border-royal-600 focus:ring-2 focus:ring-royal-100"
-                    >
-                      <option>CSC / Government Services</option>
-                      <option>Overseas Careers (FlyBridge)</option>
-                      <option>Digital Services</option>
-                      <option>Business Registration</option>
-                      <option>Travel / Car Rentals</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-600">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      rows={4}
-                      required
-                      placeholder="Tell us what you need…"
-                      className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm text-slate-900 outline-none transition-colors focus:border-royal-600 focus:ring-2 focus:ring-royal-100"
-                    />
-                  </div>
-                </div>
-
-                <button type="submit" className="btn-primary mt-5 w-full sm:w-auto">
-                  Send message <ArrowRight className="h-4 w-4" />
-                </button>
-                {submitted && (
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    className="mt-3 text-sm text-emerald-700"
-                  >
-                    Opening your email client…
-                  </motion.p>
-                )}
-              </form>
-
-              {/* Map switcher */}
+              <WhatsAppPanel />
               <OfficeMap />
             </div>
           </Reveal>
@@ -279,6 +241,71 @@ export default function ContactSection() {
   );
 }
 
+function WhatsAppPanel() {
+  const topics = [
+    'CSC / Government Services',
+    'Overseas Careers (FlyBridge)',
+    'Digital Services',
+    'Business Registration',
+    'Travel / Self-Drive Cars',
+    'Foods (coming soon)',
+  ];
+
+  const buildLink = (topic?: string) => {
+    const msg = topic
+      ? `Hello Gavirneni Group, I would like to know more about: ${topic}`
+      : 'Hello Gavirneni Group, I would like to know more about your services.';
+    return `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(msg)}`;
+  };
+
+  return (
+    <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-white p-7 shadow-card-premium">
+      <div className="absolute -right-12 -top-12 h-44 w-44 rounded-full bg-emerald-100/60 blur-3xl" />
+      <div className="relative flex items-center gap-3">
+        <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#25D366] text-white shadow-lg shadow-emerald-500/30">
+          <MessageCircle className="h-5 w-5" />
+        </span>
+        <div>
+          <p className="font-display text-xl font-bold text-slate-900">{brand.whatsappLabel}</p>
+          <p className="text-sm text-slate-500">
+            Direct chat with our advisors — usually replies within minutes.
+          </p>
+        </div>
+      </div>
+
+      <p className="relative mt-6 text-xs font-semibold uppercase tracking-wider text-slate-500">
+        Pick a topic to start the conversation
+      </p>
+      <div className="relative mt-3 grid gap-2 sm:grid-cols-2">
+        {topics.map((t) => (
+          <a
+            key={t}
+            href={buildLink(t)}
+            target="_blank"
+            rel="noreferrer"
+            className="group flex cursor-pointer items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-3.5 py-3 text-sm font-medium text-slate-700 transition-colors hover:border-emerald-300 hover:bg-emerald-50 hover:text-emerald-800"
+          >
+            {t}
+            <ArrowRight className="h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-0.5 group-hover:text-emerald-600" />
+          </a>
+        ))}
+      </div>
+
+      <div className="relative mt-6 flex flex-wrap items-center gap-3 border-t border-slate-100 pt-5">
+        <a href={buildLink()} target="_blank" rel="noreferrer" className="btn-primary !h-11">
+          <MessageCircle className="h-4 w-4" /> Start a fresh chat
+        </a>
+        <a
+          href={`tel:${brand.phones[0].replace(/\s+/g, '')}`}
+          className="btn-ghost !h-11"
+        >
+          <Phone className="h-4 w-4" /> Call {brand.phones[0]}
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function OfficeMap() {
   const [active, setActive] = useState(0);
   return (
@@ -307,36 +334,6 @@ function OfficeMap() {
         className="h-72 w-full"
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
-  );
-}
-
-function Field({
-  label,
-  name,
-  placeholder,
-  required,
-  type = 'text',
-}: {
-  label: string;
-  name: string;
-  placeholder?: string;
-  required?: boolean;
-  type?: string;
-}) {
-  return (
-    <div>
-      <label htmlFor={name} className="mb-1 block text-xs font-semibold uppercase tracking-wider text-slate-600">
-        {label}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="h-11 w-full rounded-xl border border-slate-200 bg-white px-3 text-sm text-slate-900 outline-none transition-colors placeholder:text-slate-400 focus:border-royal-600 focus:ring-2 focus:ring-royal-100"
       />
     </div>
   );

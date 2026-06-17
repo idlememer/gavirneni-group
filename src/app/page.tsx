@@ -6,9 +6,10 @@ import FlyBridge from '@/components/sections/FlyBridge';
 import DigitalServices from '@/components/sections/DigitalServices';
 import BusinessServices from '@/components/sections/BusinessServices';
 import Travel from '@/components/sections/Travel';
+import CoreValues from '@/components/sections/CoreValues';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
+import OnlineBand from '@/components/sections/OnlineBand';
 import Certifications from '@/components/sections/Certifications';
-import Testimonials from '@/components/sections/Testimonials';
 import ContactSection from '@/components/sections/ContactSection';
 
 export default function HomePage() {
@@ -22,9 +23,10 @@ export default function HomePage() {
       <DigitalServices />
       <BusinessServices />
       <Travel />
+      <OnlineBand />
+      <CoreValues />
       <WhyChooseUs />
       <Certifications />
-      <Testimonials />
       <ContactSection />
     </>
   );

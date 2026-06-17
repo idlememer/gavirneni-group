@@ -7,9 +7,9 @@ import Reveal from '@/components/motion/Reveal';
 
 const founders = [
   {
-    name: 'Karthikeya Chowdary Gavirneni',
+    name: 'Gavirneni Karthikeya Chowdary',
     role: 'Founder & Director',
-    credential: 'MBA · United Kingdom',
+    credential: 'MBA – Global Business, London, UK',
     image: '/images/founder-karthikeya.jpg',
     bullets: [
       { Icon: Globe2, text: 'Background in International Business' },
@@ -66,7 +66,7 @@ export default function Leadership() {
               opportunity.”
             </p>
             <p className="relative mt-5 text-sm font-semibold text-royal-700">
-              — Karthikeya Gavirneni &amp; Rishitha Karuturi · Founders
+              — Gavirneni Karthikeya Chowdary &amp; Rishitha Karuturi · Founders
             </p>
           </div>
         </Reveal>

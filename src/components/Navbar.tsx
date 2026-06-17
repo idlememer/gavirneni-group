@@ -27,7 +27,7 @@ export default function Navbar() {
       className="fixed inset-x-0 top-3 z-50 flex justify-center px-3 sm:top-4 sm:px-4"
     >
       <div
-        className={`flex w-full max-w-7xl items-center justify-between rounded-full border px-3 py-2 transition-all duration-300 sm:px-4 ${
+        className={`flex w-full max-w-7xl items-center justify-between rounded-full border px-3 py-2.5 transition-all duration-300 sm:px-4 sm:py-3 ${
           scrolled
             ? 'border-slate-200 bg-white/85 shadow-card-premium backdrop-blur-xl'
             : 'border-white/40 bg-white/65 shadow-lg backdrop-blur-md'
@@ -37,23 +37,23 @@ export default function Navbar() {
         <Link
           href="/"
           aria-label="Gavirneni Private Limited — Home"
-          className="flex shrink-0 items-center gap-2.5 pl-1 pr-3"
+          className="flex shrink-0 items-center gap-3 pl-1 pr-3"
         >
-          <div className="relative h-11 w-11 shrink-0">
+          <div className="relative h-14 w-14 shrink-0 sm:h-16 sm:w-16">
             <Image
               src="/images/logo-mark.png"
               alt=""
               fill
-              sizes="44px"
+              sizes="64px"
               className="object-contain"
               priority
             />
           </div>
           <div className="hidden flex-col leading-tight sm:flex">
-            <span className="font-display text-[15px] font-extrabold tracking-tight text-royal-900">
+            <span className="font-display text-[17px] font-extrabold tracking-tight text-royal-900">
               GAVIRNENI
             </span>
-            <span className="text-[9px] font-semibold uppercase tracking-[0.22em] text-gold-700">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-gold-700">
               Private Limited
             </span>
           </div>

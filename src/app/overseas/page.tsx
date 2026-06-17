@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import FlyBridge from '@/components/sections/FlyBridge';
+import Disclaimers from '@/components/sections/Disclaimers';
 import ContactSection from '@/components/sections/ContactSection';
 import Reveal from '@/components/motion/Reveal';
 import { ArrowRight, GraduationCap, Building, ShieldCheck } from 'lucide-react';
@@ -137,6 +138,7 @@ export default function OverseasPage() {
         </div>
       </section>
 
+      <Disclaimers />
       <ContactSection />
     </>
   );

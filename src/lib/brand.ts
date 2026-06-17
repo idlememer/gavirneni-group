@@ -3,13 +3,27 @@ export const brand = {
   shortName: 'Gavirneni Group',
   tagline: 'Connecting Opportunities. Enhancing Lives.',
   taglineActive: 'We Connect Opportunities. We Enhance Lives.',
+  // Primary marketing promise — used as the headline pill on Hero + Footer.
+  taglinePromise: 'From Application to Approval — Our Services Reach Your Doorstep.',
+  // Long-form footer/contact promise.
+  partnershipQuote:
+    'Your Trusted Partner for Digital, Business, Overseas & Online Services — Delivered Right to Your Doorstep.',
+  // Marketing band (used between sections).
+  onlineBand: {
+    eyebrow: 'All Services Available Online',
+    title: 'No need to visit us. Save time, travel and fuel.',
+    sub: 'Most services are completed online — get professional assistance from the comfort of your home, anywhere in India.',
+  },
   cin: 'U46909AP2026PTC124714',
   pan: 'AAMCG8922G',
+  gstin: 'Available on Request',
+  udyam: 'Available on Request',
   incorporated: '15 March 2026',
   website: 'gavirnenigroup.com',
   email: 'gavirneni7@gmail.com',
-  phones: ['+91 86398 11075', '+91 86398 31075', '+91 83282 06468'],
+  phones: ['+91 86398 11075', '+91 86398 31075'],
   whatsapp: '918639811075',
+  whatsappLabel: 'Chat with Gavirneni Group',
   // Primary registered address (HQ) and operational branch — both verified from visiting cards.
   address: {
     line1: '#7-134, OBC Colony',
@@ -30,35 +44,62 @@ export const brand = {
       mapQuery: 'Chodavaram, Krishna District, Andhra Pradesh 521139',
     },
     {
-      label: 'Branch Office · Vijayawada',
+      label: 'Branch Office',
       city: 'Vijayawada',
-      lines: [
-        'Plot No. 135, 2nd Left Lane',
-        'Sri Lakshmi Venkateswara Gardens',
-        'Tadigadapa, Vijayawada, Andhra Pradesh',
-      ],
+      lines: ['Tadigadapa', 'Vijayawada, Andhra Pradesh'],
       mapQuery: 'Tadigadapa, Penamaluru, Vijayawada, Andhra Pradesh',
     },
   ],
+  serviceReach: 'Services Available Across India',
   socials: {
-    // Display names: "Gavirneni Group". URL slugs assumed to match Instagram (@gavirnenigroup) — verify after live launch.
+    // Display names confirmed from visiting card. URL slugs assumed to match Instagram.
     facebook: 'https://www.facebook.com/gavirnenigroup',
     facebookHandle: 'Gavirneni Group',
     instagram: 'https://www.instagram.com/gavirnenigroup',
     instagramHandle: '@gavirnenigroup',
     youtube: 'https://www.youtube.com/@gavirnenigroup',
     youtubeHandle: 'Gavirneni Group',
+    // X (Twitter) — placeholder, wire actual handle later.
+    x: '#',
+    xHandle: '@gavirnenigroup',
   },
   founders: [
     {
-      name: 'Karthikeya Chowdary Gavirneni',
+      name: 'Gavirneni Karthikeya Chowdary',
       role: 'Founder & Director',
-      credential: 'MBA, United Kingdom',
+      credential: 'MBA – Global Business, London, UK',
     },
     {
       name: 'Rishitha Karuturi',
       role: 'Co-Founder',
       credential: 'PhD Scholar · Applied Psychology',
+    },
+  ],
+  // Core values — flagged by founders as the most important brand pillar.
+  coreValues: [
+    {
+      title: 'Trust',
+      desc: 'We safeguard every customer document and conversation with bank-grade confidentiality.',
+    },
+    {
+      title: 'Transparency',
+      desc: 'Clear pricing, honest timelines, no hidden steps — published before you commit.',
+    },
+    {
+      title: 'Commitment',
+      desc: 'We finish what we start — every application followed to approval, never abandoned.',
+    },
+    {
+      title: 'Dedication',
+      desc: 'Trained advisors, year-round availability and a relentless focus on customer success.',
+    },
+    {
+      title: 'Customer-First',
+      desc: 'Your problem becomes ours from the first call to the final delivery.',
+    },
+    {
+      title: 'Excellence',
+      desc: 'Premium-quality service across every counter, division and channel we operate.',
     },
   ],
 };
@@ -70,6 +111,7 @@ export const navLinks = [
   { label: 'Overseas Careers', href: '/overseas' },
   { label: 'Digital Solutions', href: '/digital' },
   { label: 'Business Services', href: '/business' },
+  { label: 'Foods', href: '/foods' },
   { label: 'Contact', href: '/contact' },
 ];
 

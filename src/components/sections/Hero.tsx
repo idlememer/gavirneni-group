@@ -12,8 +12,9 @@ import {
   ArrowRight,
   MessageCircle,
   Sparkles,
+  Home,
+  CheckCircle2,
 } from 'lucide-react';
-import Counter from '@/components/motion/Counter';
 import { brand } from '@/lib/brand';
 
 const floaters = [
@@ -25,11 +26,10 @@ const floaters = [
   { Icon: Car, top: '46%', right: '14%', delay: 0.85 },
 ];
 
-const stats = [
-  { value: 250, suffix: '+', label: 'Clients Served' },
-  { value: 12, suffix: '', label: 'States Covered' },
-  { value: 40, suffix: '+', label: 'Service Lines' },
-  { value: 24, suffix: '/7', label: 'Trusted Support' },
+const promises = [
+  { Icon: Home, text: 'No need to visit our office' },
+  { Icon: CheckCircle2, text: 'From application to approval' },
+  { Icon: Globe2, text: 'Services across India' },
 ];
 
 export default function Hero() {
@@ -126,30 +126,39 @@ export default function Hero() {
             rel="noreferrer"
             className="btn-outline-light"
           >
-            <MessageCircle className="h-4 w-4" /> Contact on WhatsApp
+            <MessageCircle className="h-4 w-4" /> {brand.whatsappLabel}
           </a>
         </motion.div>
 
-        {/* Stats */}
+        {/* Promise pill — replaces fake stats */}
         <motion.div
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.75, duration: 0.7 }}
-          className="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-3 md:mt-20 md:grid-cols-4"
+          className="mx-auto mt-14 max-w-3xl md:mt-20"
         >
-          {stats.map((s) => (
-            <div
-              key={s.label}
-              className="glass-dark rounded-2xl px-4 py-5 text-center ring-1 ring-white/10"
-            >
-              <p className="font-display text-3xl font-bold text-white sm:text-4xl">
-                <Counter to={s.value} suffix={s.suffix} />
-              </p>
-              <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-300">
-                {s.label}
-              </p>
+          <div className="glass-dark relative overflow-hidden rounded-2xl px-5 py-5 ring-1 ring-white/10 sm:px-7">
+            <div className="absolute inset-0 -z-10 opacity-40">
+              <div className="absolute -left-10 -top-10 h-32 w-32 rounded-full bg-gold-400/30 blur-2xl" />
+              <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-royal-400/30 blur-2xl" />
             </div>
-          ))}
+            <p className="text-center font-display text-lg font-bold leading-snug text-white sm:text-xl">
+              <span className="bg-gradient-to-r from-gold-300 via-gold-400 to-gold-500 bg-clip-text text-transparent">
+                {brand.taglinePromise}
+              </span>
+            </p>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 border-t border-white/10 pt-4">
+              {promises.map((p) => (
+                <span
+                  key={p.text}
+                  className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-200"
+                >
+                  <p.Icon className="h-3.5 w-3.5 text-gold-400" />
+                  {p.text}
+                </span>
+              ))}
+            </div>
+          </div>
         </motion.div>
       </div>
 

@@ -7,11 +7,12 @@ export default function WhatsAppButton() {
   return (
     <motion.a
       href={`https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(
-        'Hello Gavirneni, I would like to know more about your services.'
+        'Hello Gavirneni Group, I would like to know more about your services.'
       )}`}
       target="_blank"
       rel="noreferrer"
-      aria-label="Chat on WhatsApp"
+      aria-label={brand.whatsappLabel}
+      title={brand.whatsappLabel}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 1.4, type: 'spring', stiffness: 220, damping: 16 }}
