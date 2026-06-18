@@ -18,7 +18,7 @@ const timeline = [
   { year: 'April 2026', title: 'Gavirneni Foods', desc: 'Foods division launched — cold-pressed oils, dry fruits, pickles & spices.' },
   { year: 'May 2026', title: 'CSC Division', desc: 'Launched Gavirneni CSC & Online Services for government workflows.' },
   { year: 'June 2026', title: 'FlyBridge', desc: 'Overseas recruitment division begins Gulf & EU placements.' },
-  { year: 'July 2026', title: 'Digital + Business', desc: 'Added digital marketing, branding and company registration.' },
+  { year: 'June 2026', title: 'Digital + Business', desc: 'Added digital marketing, branding and company registration.' },
 ];
 
 export default function About() {
