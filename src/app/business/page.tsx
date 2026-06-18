@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import PageHero from '@/components/PageHero';
 import BusinessServices from '@/components/sections/BusinessServices';
+import CertificateGallery from '@/components/sections/CertificateGallery';
 import ContactSection from '@/components/sections/ContactSection';
 import Reveal from '@/components/motion/Reveal';
 import { ShieldCheck, FileSignature, Stamp, Building2 } from 'lucide-react';
@@ -85,6 +86,19 @@ export default function BusinessPage() {
       </section>
 
       <BusinessServices />
+
+      <CertificateGallery
+        eyebrow="Our Registrations"
+        title={
+          <>
+            Compliance-ready,{' '}
+            <span className="gradient-text">on paper.</span>
+          </>
+        }
+        description="The same statutory certificates we help our clients obtain — Companies Act, GST, MSME and authorised partner credentials. All issued by Government of India authorities and downloadable here."
+        show={['incorporation', 'gst', 'udyamFull', 'udyam', 'eGovernance', 'cscPartner']}
+        background="slate"
+      />
 
       <ContactSection />
     </>

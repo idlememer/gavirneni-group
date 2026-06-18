@@ -16,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CoreValues />
       <About />
       <Divisions />
       <CSCServices />
@@ -24,7 +25,6 @@ export default function HomePage() {
       <BusinessServices />
       <Travel />
       <OnlineBand />
-      <CoreValues />
       <WhyChooseUs />
       <Certifications />
       <ContactSection />

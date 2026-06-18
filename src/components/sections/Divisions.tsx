@@ -25,7 +25,7 @@ const divisions = [
   },
   {
     title: 'FlyBridge Overseas Services',
-    code: 'FBR',
+    code: 'FLY',
     Icon: Plane,
     image: '/images/flybridge.jpg',
     href: '/overseas',
@@ -34,7 +34,7 @@ const divisions = [
   },
   {
     title: 'Digital Services',
-    code: 'DGT',
+    code: 'DS',
     Icon: Sparkles,
     image: '/images/digital-services.jpg',
     href: '/digital',
@@ -72,7 +72,7 @@ export default function Divisions() {
         <Reveal className="mx-auto max-w-3xl text-center">
           <span className="eyebrow">Divisions</span>
           <h2 className="heading-display mt-4 text-4xl sm:text-5xl">
-            One group. <span className="gradient-text">Five powerful divisions.</span>
+            One group. <span className="gradient-text">Many powerful divisions.</span>
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-600">
             Specialised teams, shared values — and a single point of contact for everything you

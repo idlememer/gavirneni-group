@@ -4,6 +4,7 @@ import About from '@/components/sections/About';
 import Leadership from '@/components/sections/Leadership';
 import CoreValues from '@/components/sections/CoreValues';
 import Certifications from '@/components/sections/Certifications';
+import CertificateGallery from '@/components/sections/CertificateGallery';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Reveal from '@/components/motion/Reveal';
 import { Compass, Target, HeartHandshake } from 'lucide-react';
@@ -72,6 +73,17 @@ export default function AboutPage() {
       <Leadership />
       <CoreValues />
       <Certifications />
+      <CertificateGallery
+        eyebrow="Official Credentials"
+        title={
+          <>
+            Every certificate,{' '}
+            <span className="gradient-text">openly available.</span>
+          </>
+        }
+        description="Incorporation, GST, MSME, e-governance and partner authorisations — issued by the respective Government of India authorities and downloadable as the original PDF."
+        background="white"
+      />
       <WhyChooseUs />
     </>
   );

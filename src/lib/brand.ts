@@ -14,8 +14,8 @@ export const brand = {
     title: 'No need to visit us. Save time, travel and fuel.',
     sub: 'Most services are completed online — get professional assistance from the comfort of your home, anywhere in India.',
   },
-  cin: 'U46909AP2026PTC124714',
-  pan: 'AAMCG8922G',
+  cin: 'Available on Request',
+  pan: 'Available on Request',
   gstin: 'Available on Request',
   udyam: 'Available on Request',
   incorporated: '15 March 2026',
@@ -59,9 +59,8 @@ export const brand = {
     instagramHandle: '@gavirnenigroup',
     youtube: 'https://www.youtube.com/@gavirnenigroup',
     youtubeHandle: 'Gavirneni Group',
-    // X (Twitter) — placeholder, wire actual handle later.
-    x: '#',
-    xHandle: '@gavirnenigroup',
+    x: 'https://x.com/GavirneniGroup',
+    xHandle: '@GavirneniGroup',
   },
   founders: [
     {
@@ -108,10 +107,10 @@ export const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'CSC Services', href: '/services' },
-  { label: 'Overseas Careers', href: '/overseas' },
+  { label: 'Foods', href: '/foods' },
+  { label: 'FlyBridge', href: '/overseas' },
   { label: 'Digital Solutions', href: '/digital' },
   { label: 'Business Services', href: '/business' },
-  { label: 'Foods', href: '/foods' },
   { label: 'Contact', href: '/contact' },
 ];
 
