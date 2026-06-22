@@ -62,29 +62,29 @@ export default function FoodsGallery() {
           </p>
         </Reveal>
 
-        {/* Masonry layout via CSS columns — each poster keeps its native aspect */}
-        <div className="mt-12 columns-1 gap-5 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+        {/* Uniform grid — equal-size bordered thumbnails, full poster visible (no crop) */}
+        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
           {posters.map((p, i) => (
             <button
               key={p.src}
               type="button"
               onClick={() => setOpenIndex(i)}
-              className="group mb-5 block w-full cursor-zoom-in overflow-hidden rounded-2xl border border-slate-100 bg-white shadow-card-premium transition-all duration-300 hover:-translate-y-1 hover:shadow-card-premium-hover focus:outline-none focus:ring-2 focus:ring-royal-400 focus:ring-offset-2"
-              style={{ breakInside: 'avoid' }}
+              className="group block w-full cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 bg-white p-3 shadow-card-premium transition-all duration-300 hover:-translate-y-1 hover:border-royal-200 hover:shadow-card-premium-hover focus:outline-none focus:ring-2 focus:ring-royal-400 focus:ring-offset-2"
               aria-label={`Open ${p.alt}`}
             >
-              <div className="relative w-full">
+              {/* Inner padded thumb area — same height for every card, image fits with no crop */}
+              <div className="relative flex h-44 w-full items-center justify-center overflow-hidden rounded-lg bg-slate-50 sm:h-48 lg:h-52">
                 <Image
                   src={p.src}
                   alt={p.alt}
                   width={p.w}
                   height={p.h}
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="h-auto w-full"
+                  sizes="(min-width: 1024px) 22vw, (min-width: 640px) 30vw, 45vw"
+                  className="max-h-full max-w-full object-contain"
                 />
-                {/* Subtle zoom-in hint */}
-                <div className="pointer-events-none absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/90 text-royal-700 opacity-0 shadow-card-premium ring-1 ring-slate-200 transition-opacity duration-300 group-hover:opacity-100">
-                  <ZoomIn className="h-4 w-4" />
+                {/* Hover zoom hint */}
+                <div className="pointer-events-none absolute right-2 top-2 grid h-8 w-8 place-items-center rounded-full bg-white/95 text-royal-700 opacity-0 shadow-md ring-1 ring-slate-200 transition-opacity duration-300 group-hover:opacity-100">
+                  <ZoomIn className="h-3.5 w-3.5" />
                 </div>
               </div>
             </button>
