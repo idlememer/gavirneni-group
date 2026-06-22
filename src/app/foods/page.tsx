@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import PageHero from '@/components/PageHero';
 import Reveal from '@/components/motion/Reveal';
+import FoodsGallery from '@/components/sections/FoodsGallery';
 import {
-  Sprout,
   Wheat,
   Droplets,
   Flame,
@@ -11,7 +12,10 @@ import {
   Sparkles,
   ShoppingBag,
   ArrowRight,
+  Star,
+  ScanLine,
 } from 'lucide-react';
+import { brand } from '@/lib/brand';
 
 export const metadata: Metadata = {
   title: 'Gavirneni Foods — Order Online',
@@ -20,6 +24,8 @@ export const metadata: Metadata = {
 };
 
 const STORE_URL = 'https://api1.vyaparapp.in/store/gavirnenifoodsgpl';
+const GOOGLE_REVIEW_URL =
+  'https://www.google.com/search?q=Gavirneni+Foods';
 
 const lineup = [
   {
@@ -71,7 +77,7 @@ export default function FoodsPage() {
               <div className="absolute -top-32 -right-20 h-72 w-72 rounded-full bg-gold-400/20 blur-3xl" />
               <div className="absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-royal-500/30 blur-3xl" />
 
-              <div className="relative grid items-center gap-8 md:grid-cols-[1fr,auto]">
+              <div className="relative grid items-center gap-8 md:grid-cols-[1.1fr,auto]">
                 <div>
                   <span className="inline-flex items-center gap-2 rounded-full border border-gold-400/30 bg-gold-400/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold-300">
                     <Sparkles className="h-3.5 w-3.5" /> Now available
@@ -100,12 +106,16 @@ export default function FoodsPage() {
                   </div>
                 </div>
 
-                {/* Sprout illustration */}
-                <div className="relative hidden h-56 w-56 shrink-0 md:block">
-                  <div className="absolute inset-0 rounded-full bg-gold-400/20 blur-3xl" />
-                  <div className="relative grid h-full w-full place-items-center rounded-full border border-white/15 bg-white/5 backdrop-blur-md">
-                    <Sprout className="h-24 w-24 text-gold-300" />
-                  </div>
+                {/* Brand emblem — replaces the Sprout illustration */}
+                <div className="relative hidden h-64 w-64 shrink-0 overflow-hidden rounded-3xl border border-white/15 bg-white shadow-glow-gold md:block">
+                  <Image
+                    src="/images/foods/brand-emblem.jpg"
+                    alt="Gavirneni Foods — Dry Fruits, Nuts & Healthy Snacks"
+                    fill
+                    sizes="256px"
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
             </div>
@@ -135,9 +145,87 @@ export default function FoodsPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* CTA strip */}
-          <Reveal delay={0.1} className="mt-14">
+      {/* Brand poster gallery */}
+      <FoodsGallery />
+
+      {/* QR + Reviews callout */}
+      <section className="section-tight bg-white">
+        <div className="container-page">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-white to-slate-50 p-7 shadow-card-premium sm:p-10">
+              <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-gold-100/60 blur-3xl" />
+              <div className="absolute -left-20 -bottom-20 h-60 w-60 rounded-full bg-royal-100/60 blur-3xl" />
+
+              <div className="relative grid items-center gap-8 md:grid-cols-[auto,1fr]">
+                {/* QR card */}
+                <div className="mx-auto w-fit rounded-2xl bg-white p-4 shadow-card-premium-hover ring-1 ring-slate-200">
+                  <div className="relative h-44 w-44 sm:h-52 sm:w-52">
+                    <Image
+                      src="/images/foods/qr-google.jpg"
+                      alt="Find Gavirneni Foods on Google — scan to view profile and leave a review"
+                      fill
+                      sizes="(min-width: 640px) 208px, 176px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <p className="mt-3 text-center text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Scan with any phone camera
+                  </p>
+                </div>
+
+                <div>
+                  <span className="eyebrow">
+                    <ScanLine className="h-3.5 w-3.5" /> Find us on Google
+                  </span>
+                  <h3 className="heading-display mt-3 text-3xl sm:text-4xl">
+                    Loved our food? <span className="gradient-text">Leave a Google review.</span>
+                  </h3>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600">
+                    Scan the code with your camera to open our Google profile — share your
+                    feedback, see store details, or share us with someone who&apos;d love clean,
+                    traditional food.
+                  </p>
+                  <div className="mt-4 flex items-center gap-1.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-gold-400 text-gold-400"
+                      />
+                    ))}
+                    <span className="ml-1 text-xs font-semibold text-slate-600">
+                      Help us reach 5.0
+                    </span>
+                  </div>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <a
+                      href={GOOGLE_REVIEW_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-primary"
+                    >
+                      Open on Google <ArrowRight className="h-4 w-4" />
+                    </a>
+                    <a
+                      href={`https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(
+                        'Hello Gavirneni Foods, I would like to share feedback / place an order.'
+                      )}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-ghost"
+                    >
+                      Send feedback on WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Final order CTA */}
+          <Reveal delay={0.1} className="mt-10">
             <div className="rounded-3xl border border-slate-100 bg-slate-50 p-7 sm:p-9">
               <div className="flex flex-col items-center justify-between gap-5 text-center sm:flex-row sm:text-left">
                 <div>
